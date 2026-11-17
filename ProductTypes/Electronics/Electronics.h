@@ -8,7 +8,7 @@ class Electronics : public Product {
     Brand brand;
     Color color;
 public:
-    Electronics(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, WareHouse& wh, 
+    Electronics(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
     const Brand br, Color col);
 
     const Brand get_brand() const { return this->brand; }

@@ -8,8 +8,8 @@ enum class Gender {
 
 inline std::ostream& operator<<(std::ostream& os, Gender gender) {
     switch(gender) {
-        case Gender::male: return os << "male";
-        case Gender::female: return os << "female";
-
+        case Gender::male: return os << "male"; break;
+        case Gender::female: return os << "female"; break;
     }
+    return os;
 }

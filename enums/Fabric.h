@@ -11,10 +11,11 @@ enum class Fabric {
 
 inline std::ostream& operator<<(std::ostream& os, Fabric fabric) {
     switch(fabric) {
-        case Fabric::cotton: return os << "cotton";
-        case Fabric::synthetic: return os << "synthetic";
-        case Fabric::polyester: return os << "polyester";
-        case Fabric::wool: return os << "wool";
-        case Fabric::leather: return os << "leather";
+        case Fabric::cotton: return os << "cotton"; break;
+        case Fabric::synthetic: return os << "synthetic"; break;
+        case Fabric::polyester: return os << "polyester"; break;
+        case Fabric::wool: return os << "wool"; break;
+        case Fabric::leather: return os << "leather"; break;
     }
+    return os;
 }

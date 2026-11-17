@@ -6,9 +6,9 @@ CellPhoneFactory::CellPhoneFactory(Brand b, Color c, int mem, Resolution r, Oper
 
 std::unique_ptr<Product> CellPhoneFactory::create_product(
         int i, const std::string& n, const Price& p,
-        const Quantity& q, const Weight& w, WareHouse& wh) const {
+        const Quantity& q, const Weight& w) const {
             return std::make_unique<CellPhone>(
             i, n, p, q, w,
-            ProductCategory::electronics, wh,
+            ProductCategory::electronics,
             brand, color, memoryMB, resolution, os);
         }

@@ -1,10 +1,10 @@
 #include "CellPhone.h"
 #include <iostream>
 
-CellPhone::CellPhone(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, WareHouse& wh, 
+CellPhone::CellPhone(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
     const Brand br, Color col, 
     int mem, Resolution sr, OperatingSystem os) 
-    : Electronics(i, n, p, q, w, c, wh, br, col), screen_resolution(sr), operating_system(os) {
+    : Electronics(i, n, p, q, w, c, br, col), screen_resolution(sr), operating_system(os) {
         set_memoryMB(mem);
     }
 

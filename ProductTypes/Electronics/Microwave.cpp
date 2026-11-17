@@ -1,9 +1,9 @@
 #include "Microwave.h"
 #include <iostream>
 
-Microwave::Microwave(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, WareHouse& wh, 
+Microwave::Microwave(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
     const Brand br, Color col, int pw, int cv) 
-    : Electronics(i, n, p, q, w, c, wh, br, col), chamber_volume(cv) {
+    : Electronics(i, n, p, q, w, c, br, col), chamber_volume(cv) {
         set_power(pw);
     }
 

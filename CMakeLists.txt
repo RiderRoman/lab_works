@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.15)
+project(WarehouseProject CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
+file(GLOB_RECURSE HEADERS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.h")
+list(FILTER SOURCES EXCLUDE REGEX "${CMAKE_CURRENT_SOURCE_DIR}/build/.*")
+
+set(INCLUDE_DIRS "")
+foreach(HEADER_FILE ${HEADERS})
+    get_filename_component(DIR ${HEADER_FILE} PATH)
+    list(APPEND INCLUDE_DIRS ${DIR})
+endforeach()
+list(REMOVE_DUPLICATES INCLUDE_DIRS)
+
+add_executable(app ${SOURCES})
+target_include_directories(app PRIVATE ${INCLUDE_DIRS})

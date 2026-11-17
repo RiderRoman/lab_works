@@ -1,9 +1,9 @@
 #include "Shoes.h"
 #include <iostream>
 
-Shoes::Shoes(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, WareHouse& wh,
+Shoes::Shoes(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c,
     Color col, Fabric fab, Gender gen, double ss) 
-    : Clothes(i, n, p, q, w, c, wh, col, fab, gen) {
+    : Clothes(i, n, p, q, w, c, col, fab, gen) {
         set_shoe_size(ss);
     }
 

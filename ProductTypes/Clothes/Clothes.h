@@ -9,7 +9,7 @@ class Clothes : public Product {
     Fabric fabric;
     Gender gender;
 public:
-    Clothes(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, WareHouse& wh,
+    Clothes(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c,
     Color col, Fabric fab, Gender gen);
 
     const Color get_color() const { return this->color; }

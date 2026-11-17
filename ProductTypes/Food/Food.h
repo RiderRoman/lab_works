@@ -8,7 +8,7 @@ class Food : public Product {
     double carbohydrates;
     double sugar;
 public:
-    Food(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, WareHouse& wh, 
+    Food(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
     int cal, double prot, double fat, double carb, double sug);
 
     int get_calories() const { return this->calories; }

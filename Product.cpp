@@ -1,21 +1,17 @@
 #include "Product.h"
-#include "CellPhone.h"
 #include <iostream>
-using namespace std;
+#include <stdexcept>
 
 Product::Product(int i, const std::string& n, const Price& p, const Quantity& q, 
-    const Weight& w, ProductCategory c, WareHouse* wh) 
-    : name(n), price(p), quantity(q), weight(w), category(c) , warehouse(nullptr)
+    const Weight& w, ProductCategory c) 
+    : id(0), name(n), price(p), quantity(q), weight(w), category(c)
   {
     set_id(i);
-    if (wh != nullptr) {
-        wh->add_product(this);
-    }
   }
 
 void Product::set_id(int i) {
     if (i < 0) throw std::invalid_argument("id must be positive");
-    this->id = i;
+    id = i;
 }
 
 void Product::set_price(const Price& new_price) {
@@ -34,10 +30,8 @@ void Product::set_category(ProductCategory c) {
     this->category = c;
 }
 
-void Product::transfer_to(WareHouse& other) {
-    if (this->warehouse == &other) return;
-    if (this->warehouse != nullptr) {
-        this->warehouse->remove_product(this);
-    }
-    other.add_product(this);
+void Product::print_info() const {
+    std::cout << "ID: " << id << "\n"
+    << "Name: " << name << "\n"
+    << "Quantity: " << quantity.get_quantity() << "\n";
 }

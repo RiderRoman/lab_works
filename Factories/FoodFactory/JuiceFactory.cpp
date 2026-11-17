@@ -5,9 +5,9 @@ JuiceFactory::JuiceFactory(int cal, double prot, double fat, double carb, double
 
 std::unique_ptr<Product> JuiceFactory::create_product(
         int i, const std::string& n, const Price& p,
-        const Quantity& q, const Weight& w, WareHouse& wh) const {
+        const Quantity& q, const Weight& w) const {
             return std::make_unique<Juice>(
             i, n, p, q, w,
-            ProductCategory::food, wh,
+            ProductCategory::food,
             calories, protein, fats, carbohydrates, sugar, volume);
         }

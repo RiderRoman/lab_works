@@ -1,9 +1,9 @@
 #include "Food.h"
 #include <iostream>
 
-Food::Food(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, WareHouse& wh, 
+Food::Food(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
     int cal, double prot, double fat, double carb, double sug) 
-    : Product(i, n, p, q, w, c, wh) 
+    : Product(i, n, p, q, w, c) 
     {
     set_calories(cal);
     set_protein(prot);

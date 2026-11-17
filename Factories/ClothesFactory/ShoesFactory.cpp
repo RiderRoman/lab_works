@@ -5,9 +5,9 @@ ShoesFactory::ShoesFactory(Color col, Fabric fab, Gender gen, double ss)
 
 std::unique_ptr<Product> ShoesFactory::create_product(
         int i, const std::string& n, const Price& p,
-        const Quantity& q, const Weight& w, WareHouse& wh) const {
+        const Quantity& q, const Weight& w) const {
             return std::make_unique<Shoes>(
             i, n, p, q, w,
-            ProductCategory::clothes, wh,
+            ProductCategory::clothes,
             color, fabric, gender, shoe_size);
         }

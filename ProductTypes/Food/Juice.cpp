@@ -1,9 +1,9 @@
 #include "Juice.h"
 #include <iostream>
 
-Juice::Juice(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, WareHouse& wh, 
+Juice::Juice(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
     int cal, double prot, double fat, double carb, double sug, int vol)
-    : Food(i, n, p, q, w, c, wh, cal, prot, fat, carb, sug) {
+    : Food(i, n, p, q, w, c, cal, prot, fat, carb, sug) {
         set_volume(vol);
     }
 

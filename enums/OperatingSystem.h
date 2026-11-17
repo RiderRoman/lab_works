@@ -10,9 +10,10 @@ enum class OperatingSystem {
 
 inline std::ostream& operator<<(std::ostream& os, OperatingSystem operating_system) {
     switch(operating_system) {
-        case OperatingSystem::Android: os << "Android";
-        case OperatingSystem::IOS: os << "IOS";
-        case OperatingSystem::HarmonyOS: os << "HarmonyOS";
-        case OperatingSystem::HyperOS: os << "HyperOS";
+        case OperatingSystem::Android: os << "Android"; break;
+        case OperatingSystem::IOS: os << "IOS"; break;
+        case OperatingSystem::HarmonyOS: os << "HarmonyOS"; break;
+        case OperatingSystem::HyperOS: os << "HyperOS"; break;
     }
+    return os;
 }

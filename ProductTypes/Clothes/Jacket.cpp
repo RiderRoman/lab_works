@@ -1,9 +1,9 @@
 #include "Jacket.h"
 #include <iostream>
 
-Jacket::Jacket(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, WareHouse& wh,
+Jacket::Jacket(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c,
     Color col, Fabric fab, Gender gen, double js) 
-    : Clothes(i, n , p, q, w , c, wh, col, fab, gen) {
+    : Clothes(i, n , p, q, w , c, col, fab, gen) {
         set_jacket_size(js);
     }
 

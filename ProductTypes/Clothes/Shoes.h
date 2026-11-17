@@ -4,7 +4,7 @@
 class Shoes : public Clothes{
     double shoe_size;
 public:
-    Shoes(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, WareHouse& wh,
+    Shoes(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c,
     Color col, Fabric fab, Gender gen, double ss);
 
     double get_shoe_size() const { return this->shoe_size; }

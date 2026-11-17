@@ -1,9 +1,9 @@
 #include "Electronics.h"
 #include <iostream>
 
-Electronics::Electronics(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, WareHouse& wh, 
+Electronics::Electronics(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
     const Brand br, Color col) 
-    : Product(i, n, p, q, w, c, wh), 
+    : Product(i, n, p, q, w, c), 
     brand(br), 
     color(col) {}
 

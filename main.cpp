@@ -14,10 +14,9 @@ int main() {
         "Xiomi T17", 
         Price(25000), 
         Quantity(1), 
-        Weight(215), 
-        wh1);
+        Weight(215));
     
         p1->print_info();
-
+        
         return 0;
 }

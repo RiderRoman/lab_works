@@ -5,9 +5,9 @@ MicrowaveFactory::MicrowaveFactory(Brand b, Color c, int pw, int cv)
 
 std::unique_ptr<Product> MicrowaveFactory::create_product(
         int i, const std::string& n, const Price& p,
-        const Quantity& q, const Weight& w, WareHouse& wh) const {
+        const Quantity& q, const Weight& w) const {
             return std::make_unique<Microwave>(
             i, n, p, q, w,
-            ProductCategory::electronics, wh,
+            ProductCategory::electronics,
             brand, color, power, chamber_volume);
         }

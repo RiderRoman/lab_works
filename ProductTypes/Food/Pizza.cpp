@@ -1,9 +1,9 @@
 #include "Pizza.h"
 #include <iostream>
 
-Pizza::Pizza(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, WareHouse& wh, 
+Pizza::Pizza(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
     int cal, double prot, double fat, double carb, double sug, double rad) 
-    : Food(i, n, p, q, w, c, wh, cal, prot, fat, carb, sug) {
+    : Food(i, n, p, q, w, c, cal, prot, fat, carb, sug) {
         set_radius(rad);
     }
 

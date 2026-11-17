@@ -13,5 +13,5 @@ public:
 
     std::unique_ptr<Product> create_product(
         int i, const std::string& n, const Price& p,
-        const Quantity& q, const Weight& w, WareHouse& wh) const override;
+        const Quantity& q, const Weight& w) const override;
 };
