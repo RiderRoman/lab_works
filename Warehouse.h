@@ -39,6 +39,8 @@ public:
     std::vector<Product*> find_product_by_category(ProductCategory c) const;
     std::vector<Product*> find_product_by_price(const Price& price) const;
 
+    void print_info() const;
+
     auto begin() { return products.begin(); }
     auto end() { return products.end(); }
     auto begin() const { return products.begin(); }
