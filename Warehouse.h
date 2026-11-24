@@ -7,7 +7,7 @@
 class WareHouse {
     std::string name;
     std::string address;
-    std::vector<std::unique_ptr<Product>> products;   // склад владеет товарами
+    std::vector<std::unique_ptr<Product>> products;
     int product_limit;
 public:
     WareHouse(const std::string& n, const std::string &a, int limit);

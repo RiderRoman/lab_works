@@ -8,4 +8,5 @@ public:
     int get_quantity() const { return value; }
     
     void set_quantity(int val);
+    int change_quantity(int delta);
 };

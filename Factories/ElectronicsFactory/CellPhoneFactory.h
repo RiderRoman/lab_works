@@ -12,6 +12,6 @@ public:
     CellPhoneFactory(Brand b, Color c, int mem, Resolution r, OperatingSystem o);
 
     std::unique_ptr<Product> create_product(
-        int i, const std::string& n, const Price& p,
+        const std::string& n, const Price& p,
         const Quantity& q, const Weight& w) const override;
 };

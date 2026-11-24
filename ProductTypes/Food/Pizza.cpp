@@ -1,9 +1,9 @@
 #include "Pizza.h"
 #include <iostream>
 
-Pizza::Pizza(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
+Pizza::Pizza(const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
     int cal, double prot, double fat, double carb, double sug, double rad) 
-    : Food(i, n, p, q, w, c, cal, prot, fat, carb, sug) {
+    : Food(n, p, q, w, c, cal, prot, fat, carb, sug) {
         set_radius(rad);
     }
 
@@ -17,6 +17,6 @@ void Pizza::print_info() const {
     std::cout << "Pizza radius: " << this->radius << " cm\n";
 }
 
-Product* Pizza::clone() const {
-    return new Pizza(*this);
+std::unique_ptr<Product> Pizza::clone() const {
+    return std::make_unique<Pizza>(*this);
 }

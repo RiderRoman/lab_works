@@ -1,9 +1,9 @@
 #include "Jacket.h"
 #include <iostream>
 
-Jacket::Jacket(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c,
+Jacket::Jacket(const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c,
     Color col, Fabric fab, Gender gen, double js) 
-    : Clothes(i, n , p, q, w , c, col, fab, gen) {
+    : Clothes(n , p, q, w , c, col, fab, gen) {
         set_jacket_size(js);
     }
 
@@ -17,6 +17,6 @@ void Jacket::print_info() const {
     std::cout << "Jacket size: " << this->jacket_size << "\n";
 }
 
-Product* Jacket::clone() const {
-    return new Jacket(*this);
+std::unique_ptr<Product> Jacket::clone() const {
+    return std::make_unique<Jacket>(*this);
 }

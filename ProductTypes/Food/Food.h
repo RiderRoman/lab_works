@@ -8,7 +8,7 @@ class Food : public Product {
     double carbohydrates;
     double sugar;
 public:
-    Food(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
+    Food(const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
     int cal, double prot, double fat, double carb, double sug);
 
     int get_calories() const { return this->calories; }
@@ -24,5 +24,5 @@ public:
     void set_sugar(double sug);
 
     void print_info() const override;
-    Product* clone() const override;
+    std::unique_ptr<Product> clone() const override;
 };

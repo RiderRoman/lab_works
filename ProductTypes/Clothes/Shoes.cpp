@@ -1,9 +1,9 @@
 #include "Shoes.h"
 #include <iostream>
 
-Shoes::Shoes(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c,
+Shoes::Shoes(const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c,
     Color col, Fabric fab, Gender gen, double ss) 
-    : Clothes(i, n, p, q, w, c, col, fab, gen) {
+    : Clothes(n, p, q, w, c, col, fab, gen) {
         set_shoe_size(ss);
     }
 
@@ -17,6 +17,6 @@ void Shoes::print_info() const {
     std::cout << "Shoe size: " << this->shoe_size << "\n";
 }
 
-Product* Shoes::clone() const {
-    return new Shoes(*this);
+std::unique_ptr<Product> Shoes::clone() const {
+    return std::make_unique<Shoes>(*this);
 }

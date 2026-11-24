@@ -11,6 +11,6 @@ public:
     JacketFactory(Color col, Fabric fab, Gender gen, double js);
 
     std::unique_ptr<Product> create_product(
-        int i, const std::string& n, const Price& p,
+        const std::string& n, const Price& p,
         const Quantity& q, const Weight& w) const override;
 };

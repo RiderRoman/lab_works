@@ -1,9 +1,9 @@
 #include "Microwave.h"
 #include <iostream>
 
-Microwave::Microwave(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
+Microwave::Microwave(const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
     const Brand br, Color col, int pw, int cv) 
-    : Electronics(i, n, p, q, w, c, br, col), chamber_volume(cv) {
+    : Electronics(n, p, q, w, c, br, col), chamber_volume(cv) {
         set_power(pw);
     }
 
@@ -23,6 +23,6 @@ void Microwave::print_info() const {
     << "Chamber volume: " << this->chamber_volume << " l\n";
 }
 
-Product* Microwave::clone() const {
-    return new Microwave(*this);
+std::unique_ptr<Product> Microwave::clone() const {
+    return std::make_unique<Microwave>(*this);
 }

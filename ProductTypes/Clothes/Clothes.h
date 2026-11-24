@@ -9,7 +9,7 @@ class Clothes : public Product {
     Fabric fabric;
     Gender gender;
 public:
-    Clothes(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c,
+    Clothes(const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c,
     Color col, Fabric fab, Gender gen);
 
     const Color get_color() const { return this->color; }
@@ -21,5 +21,5 @@ public:
     void set_gender(const Gender gen);
 
     void print_info() const override;
-    Product* clone() const override;
+    std::unique_ptr<Product> clone() const override;
 };

@@ -1,13 +1,14 @@
 #pragma once
+#include <cstdint>
 
 class Price {
-    double value;
+    std::int64_t value;
 public:
-    Price(double val);
+    Price(std::int64_t val);
     Price& operator=(const Price& other);
     
     bool operator==(const Price& other) const;
-    double get_price() const { return value; }
+    std::int64_t get_price() const { return this->value; }
     
-    void set_price(double val);
+    void set_price(std::int64_t val);
 };

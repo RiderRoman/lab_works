@@ -1,9 +1,9 @@
 #include "Food.h"
 #include <iostream>
 
-Food::Food(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
+Food::Food(const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
     int cal, double prot, double fat, double carb, double sug) 
-    : Product(i, n, p, q, w, c) 
+    : Product(n, p, q, w, c) 
     {
     set_calories(cal);
     set_protein(prot);
@@ -46,6 +46,6 @@ void Food::print_info() const {
     << "Sugar: " << this->sugar << " g\n";
 }
 
-Product* Food::clone() const {
-    return new Food(*this);
+std::unique_ptr<Product> Food::clone() const {
+    return std::make_unique<Food>(*this);
 }

@@ -1,7 +1,7 @@
 #include "Price.h"
 #include <iostream>
 
-Price::Price(double val) {
+Price::Price(std::int64_t val) {
     set_price(val);
 }
 
@@ -15,7 +15,7 @@ bool Price::operator==(const Price& other) const {
     return this->value == other.value;
 }
 
-void Price::set_price(double val) {
-    if (val <= 0.0) throw std::invalid_argument("price of product must be positive");
+void Price::set_price(std::int64_t val) {
+    if (val <= 0) throw std::invalid_argument("price of product must be positive");
     this->value = val;
 }

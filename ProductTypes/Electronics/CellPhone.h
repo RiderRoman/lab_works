@@ -9,7 +9,7 @@ class CellPhone : public Electronics {
     Resolution screen_resolution;
     OperatingSystem operating_system;
 public:
-    CellPhone(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
+    CellPhone(const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
     const Brand br, Color col, 
     int mem, Resolution sr, OperatingSystem os);
     
@@ -23,5 +23,5 @@ public:
     void set_operating_system(const OperatingSystem os);
 
     void print_info() const override;
-    Product* clone() const override;
+    std::unique_ptr<Product> clone() const override;
 };

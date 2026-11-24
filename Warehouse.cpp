@@ -66,7 +66,11 @@ void WareHouse::add_product(std::unique_ptr<Product> p) {
     if (p == nullptr)
         throw std::invalid_argument("product is null.");
     if (is_full()) 
-        throw std::invalid_argument("it is not possible to add the product. the warehouse is full.");
+        throw std::overflow_error("it is not possible to add the product. the warehouse is full.");
+    for (const std::unique_ptr<Product>& pp : products) {
+        if (p->get_id() == pp->get_id())
+            throw std::invalid_argument("wrong id");
+    }
     this->products.push_back(std::move(p));
 }
 
@@ -82,6 +86,7 @@ bool WareHouse::remove_product(Product* p) {
 
 bool WareHouse::remove_product_by_id(int id) {
     Product* p = find_product_by_id(id);
+    
     return p && remove_product(p);
 }
 

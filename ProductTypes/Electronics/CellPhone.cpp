@@ -1,10 +1,10 @@
 #include "CellPhone.h"
 #include <iostream>
 
-CellPhone::CellPhone(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
+CellPhone::CellPhone(const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
     const Brand br, Color col, 
     int mem, Resolution sr, OperatingSystem os) 
-    : Electronics(i, n, p, q, w, c, br, col), screen_resolution(sr), operating_system(os) {
+    : Electronics(n, p, q, w, c, br, col), screen_resolution(sr), operating_system(os) {
         set_memoryMB(mem);
     }
 
@@ -24,6 +24,6 @@ void CellPhone::print_info() const {
     << "OperatingSystem: " << this->operating_system << "\n";
 }
 
-Product* CellPhone::clone() const {
-    return new CellPhone(*this);
+std::unique_ptr<Product> CellPhone::clone() const {
+    return std::make_unique<CellPhone>(*this);
 }

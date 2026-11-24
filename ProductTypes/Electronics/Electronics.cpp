@@ -1,9 +1,9 @@
 #include "Electronics.h"
 #include <iostream>
 
-Electronics::Electronics(int i, const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
+Electronics::Electronics(const std::string& n, const Price& p, const Quantity& q, const Weight& w, ProductCategory c, 
     const Brand br, Color col) 
-    : Product(i, n, p, q, w, c), 
+    : Product(n, p, q, w, c), 
     brand(br), 
     color(col) {}
 
@@ -21,6 +21,6 @@ void Electronics::print_info() const {
     << "Color: " << this->color << "\n";
 }
 
-Product* Electronics::clone() const {
-    return new Electronics(*this);
+std::unique_ptr<Product> Electronics::clone() const {
+    return std::make_unique<Electronics>(*this);
 }
